@@ -1,1 +1,1 @@
-Sitemap: https://fastpages.fast.ai/sitemap.xml
+Sitemap: https://riyan-aditya.github.io//MyBlog/sitemap.xml
