@@ -1,0 +1,62 @@
+<p>This project is based on Chapter 2 of <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">a book by Aurelien Geron</a><br />
+The author also provided <a href="https://github.com/ageron/handson-ml2">a github link for the notebook</a></p>
+
+<p>I was following the notebook, recreating it, and made some annotations for my own understanding. But 95% of the work was following Geron’s.</p>
+
+<p><strong>Introduction</strong></p>
+
+<p>The dataset we are using is the California Housing Prices dataset based on 1990 California census (see Figure below). We were trying to <strong>predict the mean house prices</strong> in each district by using <strong>regression</strong>.</p>
+
+<p><img src="https://griyanaditya.files.wordpress.com/2020/09/california_housing_prices_plot.png?w=1024" alt="" /></p>
+
+<p>In summary, it is an end to end ML project:</p>
+
+<ul>
+  <li>Importing data from Github</li>
+  <li>Exploratory Data Analysis</li>
+  <li>Preparing data<br />
+  Includes: imputing, dealing with categorical data, custom transformer, and applying pipelines</li>
+  <li>Select and train model<br />
+  The example used: linear regression, decision tree, random forest and support vector regression</li>
+  <li>Fine tune model / hyperparameter adjustment<br />
+  Via: GridSearch and Randomised search</li>
+</ul>
+
+<p><strong>Results:</strong></p>
+
+<p><img src="https://griyanaditya.files.wordpress.com/2020/09/newplot-1.png?w=700" alt="" /></p>
+
+<p>As seen above, the lowest RMSE is for RandomForest with GridSearch tuning. With this model, the RMSE of the test set is $47.7k</p>
+
+<p><strong>What I learnt</strong></p>
+
+<p>What do i say. I learnt a lot as this is my first time going through the whole process.</p>
+
+<p>Insights:</p>
+
+<ul>
+  <li>Random test-train split may not be good if the data is skewed. Test data should have a similar “sub-group” distribution as the full data set =&gt; use <em>StratifiedShuffleSplit</em></li>
+  <li>Experiment with attributes. <em>Feature engineering</em> may create a better metrics<br />
+  Eg: In this example, number_of_bedrooms and number_of_household didn’t correlate well with median_house_value. Once we create number_of_rooms/household =&gt; this metric much more correlated to median_house_value</li>
+  <li>Using <em>SimpleImputer</em></li>
+  <li>Using <em>OrdinalEncoder</em> vs <em>OneHotEncoder</em></li>
+  <li>Feature engineering via custom transformer</li>
+  <li>Using Feature Scaling such as <em>StandardScaler</em></li>
+  <li>Sparse vs dense matrix. <em>Sparse matrix in OneHotEncoder</em> due to the presence of many 0’s.</li>
+  <li>Applied the above via <em>pipeline</em></li>
+  <li>Using K-fold cross validation (<em>cross_val_score</em>). Beware of training time.</li>
+  <li>Can do automatic hyperparameter via <em>GridSearchCV</em> and <em>RandomisedSearchCV</em></li>
+  <li>Sometimes, knowing the final RMSE isn’t enough. How do we know if this performs better compared to an already deployed model ==&gt; might be good to find the 95% CI</li>
+</ul>
+
+<p>What I found confusing in this tutorial:</p>
+
+<ul>
+  <li>I found it confusing for the author to rename housing to strat_train_set. I would prefer to keep the “train set” variable label throughout the exercise.</li>
+</ul>
+
+<p><strong>Next step?</strong></p>
+
+<ul>
+  <li>Probably continue for classification problem tutorial</li>
+</ul>
