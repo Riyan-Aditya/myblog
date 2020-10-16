@@ -1,5 +1,6 @@
 ---
-title: "Project 1 - End to End ML Project"
+title: "End to End ML Project tutorial from Chapter 2 of the Hands-on Machine Learning book"
+description: My first attempt to follow an example of an end to end ML project.
 date: "2020-09-17"
 ---
 

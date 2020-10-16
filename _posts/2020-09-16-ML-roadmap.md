@@ -1,5 +1,6 @@
 ---
 title: "ML roadmap (By Daniel Bourke)"
+description: Summary of ML roadmap from Daniel Bourke's Youtube video.
 date: "2020-09-16"
 ---
 
