@@ -1,0 +1,70 @@
+<p>This project is based on Chapter 3 of <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">a book by Aurelien Geron</a><br />
+The author also provided <a href="https://github.com/ageron/handson-ml2">a github link for the notebook</a></p>
+
+<p>I was following the notebook, recreating it, and made some annotations for my own understanding.</p>
+
+<p>Minor progress. In managed to become independent while following through the example notebook compared to when I was going through Project 1 (I tried to type some of the codes from scratch).</p>
+
+<p><strong>Introduction</strong></p>
+
+<p>The dataset is the <a href="https://en.wikipedia.org/wiki/MNIST_database">MNIST</a> data that are commonly used as the “hello world” for image classification. Basically, given the input, we are trying to train a model and compare it to the feature label (which is the digit of the image).</p>
+
+<p><img src="https://griyanaditya.files.wordpress.com/2020/09/image-2.png?w=633" alt="" /></p>
+
+<p>Coding process:</p>
+
+<ul>
+  <li>Load data</li>
+  <li>Start from binary classifier.</li>
+  <li>Multiclass classifier.</li>
+  <li>Briefly cover multi label and multi output classification</li>
+</ul>
+
+<p>Problem: Some of the model takes forever to train (maybe my limited hardware). I ended up using sub datasets (up to 5k data) from the training datasets (60k). Hence, my output wasn’t optimal compared to the example notebook.</p>
+
+<p>Result: Independent of the example, <strong>I attempted to make the final prediction by using the SGD model (trained with 10k data) and applied to the test set (the last 1k data imported)</strong>.</p>
+
+<p>The following is the confusion matrix plot of the test set. Bright colour indicates missclassifed. We can observe that the model confuse:</p>
+
+<ul>
+  <li>3 and 5 (bright white box).</li>
+  <li>7 and 9</li>
+  <li>Furthermore, many numbers are miss classified as an 8 (colum with an 8).</li>
+</ul>
+
+<p><img src="https://griyanaditya.files.wordpress.com/2020/09/image-5.png?w=345" alt="" /></p>
+
+<p><strong>What I learnt</strong></p>
+
+<p>Insights:</p>
+
+<ul>
+  <li>For classification problem, it is important to shuffle the dataset. Some algorithm may perform poorly if they get many instances in a row
+    <ul>
+      <li>But this is not good for data such as time series data</li>
+    </ul>
+  </li>
+  <li>
+    <p>Binary classification using <em>SGDClassifier</em> &amp; RandomForest =&gt; build a number 5 classifier</p>
+
+    <ul>
+      <li>
+        <p>Performance metrics: accuracy, confusion matrix, precision, recall, F1, Precision Recall curve, ROC curve.</p>
+      </li>
+      <li>Consider <em>precision/recall tradeoff</em>. They go together. High precision is not useful for low recall</li>
+      <li>Use <em>PR curve</em> instead of <em>ROC curve</em> when positive class is rare or care more about FP than FN</li>
+    </ul>
+  </li>
+  <li>Multiclass classification =&gt; used <em>SVC</em> and <em>SGD</em>
+    <ul>
+      <li>Assess with <em>confusion matrix</em></li>
+      <li>Using <em>matshow()</em> can help to visualise and give insight on which classes that are easily miss-classified</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Next step?</strong></p>
+
+<p>I am buying this book and will continue on Chapter 4 next week. Really liked the explanation as well as the accompanying notebook in Github.</p>
+
+<p>One of the added exercise is to go through the Titanic dataset on Kaggle. I watched a YouTube video on it before, tried to follow through but unfinished. I will re-attempt this again</p>
