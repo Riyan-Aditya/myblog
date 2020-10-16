@@ -1,0 +1,60 @@
+<p>This project is based on a <a href="https://www.youtube.com/watch?v=I3FBJdiExcg&amp;t=1797s">YouTube video</a> by KenJee<br />
+The author also provided <a href="https://github.com/ageron/handson-ml2">a link to Kaggle for his notebook</a><br />
+This is also based on the popular <a href="https://www.kaggle.com/c/titanic">Kaggle’s Titanic dataset</a> which is used as the introduction for classification problem.</p>
+
+<p>I was following the notebook, recreating it, and made some annotations for my own understanding. My follow along notebook is <a href="https://github.com/Riyan-Aditya/MyBlog/tree/master/Other%20notebooks">here</a>.</p>
+
+<p>Ken provided a good overview in each notebook session as well as introductory comment for each cell. Often I read the comment then attempted to code by myself first, then checking with his code afterwards. Good progress for my learning.</p>
+
+<p><strong>Introduction</strong></p>
+
+<p>This <a href="https://en.wikipedia.org/wiki/MNIST_database">Titanic</a> dataset is commonly used as the introduction into the Kaggle competition. With this dataset, we create a model to predict which passengers survived the Titanic shipwreck.</p>
+
+<p>Coding process:</p>
+
+<ul>
+  <li>Import data</li>
+  <li>EDA</li>
+  <li>Feature Engineering</li>
+  <li>Data Preprocessing
+    <ul>
+      <li>Dropped null values, used dummy variables, imputed data with median and using standard scaler</li>
+    </ul>
+  </li>
+  <li>Model building
+    <ul>
+      <li>Using: <em>Naive Bayers, Logistic Regression, Decision Tree, K Nearest Neighbour, Random Forest, Support Vector Classifier, Extreme Gradient Boosting, Soft Voting Classifier</em></li>
+    </ul>
+  </li>
+  <li>Model tuning</li>
+</ul>
+
+<p>Result:</p>
+
+<p>From the base model, the cross validation score achieved was around 75 to 80%. The best model seems to be the <em>Support Vector Classifier</em> model. The ensemble method seems to perform better.</p>
+
+<p>The models were later tuned by using <em>GridSearch</em>. Hyperparameter for model such as RandomForest may take ages to run. Overall, the model performance slightly improved (1 to 3%) after tuning. The <em>Extreme Gradient Boosting</em> model received the highest improvement. Some voting classifier were also conducted using combinations of the tuned models.</p>
+
+<p>At the end, <strong>the best performance model</strong> with the Kaggle’s test dataset is the <strong>hard voting</strong> of the tuned model. This achieved <strong>79%</strong> score with the test set.</p>
+
+<p><img src="https://griyanaditya.files.wordpress.com/2020/09/newplot-2.png?w=700" alt="" /></p>
+
+<p><strong>What I learnt</strong></p>
+
+<p>Insights:</p>
+
+<ul>
+  <li>Good idea to do EDA separately between numerical and categorical data.</li>
+  <li>For categorical data such as cabin or ticket, don’t be afraid to group variables based on certain category (eg: first letter of ticket). This can shorten combinations significantly.</li>
+  <li>Using Pandas’ <em>get_dummies</em> vs <em>OneHotEncoding</em>.
+    <ul>
+      <li>Generally for ML, <em>OHE</em> seems to be better and can be used in pipelines</li>
+      <li><em>get_dummies</em> can be applied to a dataframe automatically (it will automatically applied only for the categorical part of the DF).</li>
+    </ul>
+  </li>
+  <li>For model like <em>RandomForest</em>, maybe better to start with <em>RandomisedSearchCV</em> then tune with <em>GridSearchCV</em> to cut down searching costs.</li>
+</ul>
+
+<p><strong>Next step?</strong></p>
+
+<p>I am going to continue with Chapter 4 of the Geron’s book</p>
