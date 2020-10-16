@@ -7,7 +7,7 @@ date: "2020-09-18"
 This project is based on Chapter 3 of [a book by Aurelien Geron](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/)  
 The author also provided [a github link for the notebook](https://github.com/ageron/handson-ml2)
 
-I was following the notebook, recreating it, and made some annotations for my own understanding. My follow along notebook is [here](https://github.com/Riyan-Aditya/MyBlog/tree/master/Other%20notebooks).
+I was following the notebook, recreating it, and made some annotations for my own understanding. My follow along notebook is [here](https://github.com/Riyan-Aditya/MyBlog/tree/master/Other%20notebooks/Follow%20along%20Hands-on%20ML%20book%20by%20A%20Geron).
 
 Minor progress. In managed to become independent while following through the example notebook compared to when I was going through Project 1 (I tried to type some of the codes from scratch).
 

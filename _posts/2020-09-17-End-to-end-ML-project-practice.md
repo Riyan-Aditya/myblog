@@ -1,13 +1,13 @@
 ---
 title: "End to End ML Project tutorial from Chapter 2 of the Hands-on Machine Learning book"
-description: My first attempt to follow an example of an end to end ML project.
+description: My first attempt to follow an example of an end to end ML project (regression).
 date: "2020-09-17"
 ---
 
 This project is based on Chapter 2 of [a book by Aurelien Geron](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/)  
 The author also provided [a github link for the notebook](https://github.com/ageron/handson-ml2)
 
-I was following the notebook, recreating it, and made some annotations for my own understanding. But 95% of the work was following Geron's. My follow along notebook is [here](https://github.com/Riyan-Aditya/MyBlog/tree/master/Other%20notebooks).
+I was following the notebook, recreating it, and made some annotations for my own understanding. But 95% of the work was following Geron's. My follow along notebook is [here](https://github.com/Riyan-Aditya/MyBlog/tree/master/Other%20notebooks/Follow%20along%20Hands-on%20ML%20book%20by%20A%20Geron).
 
 **Introduction**
 
