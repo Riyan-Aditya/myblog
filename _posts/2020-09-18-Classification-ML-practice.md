@@ -1,6 +1,5 @@
 ---
 title: "Classification tutorial from Chapter 3 of the Hands-on Machine Learning book"
-title: "End to End ML Project tutorial from Chapter 2 of the Hands-on Machine Learning book"
 description: My first attempt to follow a classification example.
 date: "2020-09-18"
 ---
@@ -8,7 +7,7 @@ date: "2020-09-18"
 This project is based on Chapter 3 of [a book by Aurelien Geron](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/)  
 The author also provided [a github link for the notebook](https://github.com/ageron/handson-ml2)
 
-I was following the notebook, recreating it, and made some annotations for my own understanding.
+I was following the notebook, recreating it, and made some annotations for my own understanding. My follow along notebook is [here](https://github.com/Riyan-Aditya/MyBlog/tree/master/Other%20notebooks).
 
 Minor progress. In managed to become independent while following through the example notebook compared to when I was going through Project 1 (I tried to type some of the codes from scratch).
 
