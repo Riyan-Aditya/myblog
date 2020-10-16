@@ -1,0 +1,149 @@
+<p>I like this roadmap from <a href="https://www.youtube.com/watch?v=pHiMN_gy9mk">Daniel Bourke’s Youtube video</a>.<br />
+The roadmap can be accessed <a href="https://whimsical.com/CA7f3ykvXpnJ9Az32vYXva">here</a>.</p>
+
+<p><img src="https://griyanaditya.files.wordpress.com/2020/09/image.png?w=1024" alt="" /></p>
+
+<p>I think this roadmap provides a good overview of how to learn ML. One-stop-shop for everything. The roadmap covers the basic explanation of ML, the available tools and resources and link to the maths behind them if required.</p>
+
+<p>I also like how the video encourages you to approach the learning as a “cook” rather than a “chemist”. Start small. Step-by-step. Learn by doing rather than understanding everything in detail.</p>
+
+<p><strong>Quick overview</strong></p>
+
+<p>Basically, <strong>machine learning gives the ability for a machine to learn without being explicitly programmed.</strong></p>
+
+<ol>
+  <li>
+    <p><em>Problems with long lists of rules</em><br />
+ Eg: it will be complex to program a self-driving car via traditional programming</p>
+  </li>
+  <li>
+    <p><em>Continually changing environment</em><br />
+ Eg: self-driving car can adapt if there is a new road or traffic sign</p>
+  </li>
+  <li>
+    <p><em>Discovering insights within large collections of data</em><br />
+ Eg: it will be too much to go to every single transaction manually if you are Amazon</p>
+  </li>
+</ol>
+
+<p><strong>ML problems</strong></p>
+
+<p>Types of learning for ML:</p>
+
+<ol>
+  <li>
+    <p><em>Supervised learning</em><br />
+ You have data and labels. The model tries to learn the relationship between data and label.</p>
+  </li>
+  <li>
+    <p><em>Unsupervised learning</em><br />
+ You have data but no labels. The model tries to find patterns in data without something to reference on.</p>
+  </li>
+  <li>
+    <p><em>Transfer learning</em><br />
+ Take an existing ML model, then adjust it on your own and use it for your own problem.</p>
+  </li>
+  <li>
+    <p><em>Reinforcement learning</em><br />
+ When an agent perform an action and being rewarded or penalised based on if the action is favourable or not</p>
+  </li>
+</ol>
+
+<p>ML problem domains:</p>
+
+<ol>
+  <li>
+    <p><em>Classification</em><br />
+ The model will use training dataset to learn and then use them to best map the input to the output/label.<br />
+ Eg: classify a mail as spam or not spam</p>
+  </li>
+  <li>
+    <p><em>Regression</em><br />
+ The model will identify the relationship between the dependent and independent variables.<br />
+ Eg: the price of a stock over time</p>
+  </li>
+  <li>
+    <p><em>Sequence-to-sequence</em><br />
+ Usually in languages for translation.<br />
+ Eg: Given a sequence in English, translate it to Spanish.</p>
+  </li>
+  <li>
+    <p><em>Clustering</em><br />
+ Typically an unsupervised problem. Where the model groups data points based on similarity.<br />
+ Eg: Sort a soccer player based on their attributes (striker/defender/goalkeeper etc)</p>
+  </li>
+  <li>
+    <p>Dimensionality reduction<br />
+ If you have so much input (100 variables), find the 10 most important variables.<br />
+ Eg: by using PCA (principal component analysis)</p>
+  </li>
+</ol>
+
+<p><strong>ML process</strong></p>
+
+<p>First, you need to <strong>collect some data.</strong> It is important here to recognise the type of data you need. Data can be structured data in a table (eg: categorical, numerical, ordinal data etc) or unstructured data (eg: images, speech etc). Remember, rubbish in, rubbish out.</p>
+
+<p>Second, you need to <strong>prepare the data</strong>. Typical data preparation steps:</p>
+
+<ul>
+  <li>
+    <p><em>Exploratory data analysis (EDA)</em><br />
+  This process involves understanding your data. Including exploring whether there are outliers and missing data.</p>
+  </li>
+  <li><em>Data pre-processing</em><br />
+  This step is to prepare your data before the modelling process.
+    <ul>
+      <li>Do you fill missing values?</li>
+      <li>Do we need to do feature encoding (changing categorical data into numbers)?</li>
+      <li>Do we need to do feature normalisation?</li>
+      <li>Do we need to do feature engineering?</li>
+      <li>Do we need to deal with data imbalances?</li>
+    </ul>
+  </li>
+  <li><em>Data splitting</em><br />
+  For training (70-80% data), validation (10-15% data) and test set (10-15% data) as needed. It is important to not use the test set to tune the model.</li>
+</ul>
+
+<p>The third step is to <strong>train the model</strong>.</p>
+
+<ul>
+  <li>This is done by choosing an algorithm based on your problem and data.</li>
+  <li>Beware of <em>underfitting</em> (when the model doesn’t perform as well as you would like based on performance metrics) and <em>overfitting</em> (when the model performs far better on the training set than on the test set) the model.</li>
+  <li>Typically we overfit first, then reduce through various <em>regularisation technique</em>.</li>
+  <li>Finally, we can tune various hyperparameters by using validation set data.<br />
+  Eg of hyperparameters: learning rate (usually most important), number of layers, batch size, number of trees etc</li>
+</ul>
+
+<p>Next, we <strong>evaluate the model</strong> based on available metrics. There are several considerations here:</p>
+
+<ul>
+  <li>How long does a model take to train?</li>
+  <li>How long does a model need to predict?<br />
+  Eg: It is no good to have a self-driving car model that is 99% accurate but takes 15 seconds to make a prediction</li>
+  <li>Consider scenario such as what happens if the input data changes</li>
+  <li>Find out the least confident examples. What does the model usually get wrong?</li>
+  <li>Consider bias &amp; variance trade-off</li>
+</ul>
+
+<p>Once we are confident, we can <strong>serve the model</strong>. We will not know how it performs until we put it out for real. Use different tools whether the final goal is an a mobile app or a web based application.</p>
+
+<p>Finally, we need to continue evaluating the model and <strong>retrain the model</strong> if needed. The model may change if the data source has changed (such as new road) or data source has been upgraded (such as new hardware used).</p>
+
+<p><strong>What have I learnt from this roadmap?</strong></p>
+
+<p>Good news. I know the basic. I have used Python before and familiar with the libraries. I guess I am closer to intermediate in ML. I have watched or read or have done tutorial covering some of these ML algorithms.</p>
+
+<p>I guess I will start here:</p>
+
+<p><img src="https://griyanaditya.files.wordpress.com/2020/09/image-1.png?w=1024" alt="" /></p>
+
+<p>To do lists (probably in this order):</p>
+
+<ul>
+  <li>Do the 3 example projects</li>
+  <li>Learn/try how to use <a href="https://www.streamlit.io/">streamlit</a> to deploy a basic proof of concept</li>
+  <li>Go through the <a href="https://www.fast.ai/">fast.ai</a> curriculum (seems to be highly recommended by DB, the author)</li>
+  <li>Test my knowledge in <a href="https://workera.ai/">workera.ai</a></li>
+  <li>Projects, projects and projects. Probably using <a href="https://www.kaggle.com/">Kaggle</a></li>
+  <li>SQL maybe?</li>
+</ul>
