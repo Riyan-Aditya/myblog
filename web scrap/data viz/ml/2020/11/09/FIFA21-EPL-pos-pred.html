@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="FIFA21 EPL analysis" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Analysis of EPL players in FIFA21" />
-<meta property="og:description" content="Analysis of EPL players in FIFA21" />
-<link rel="canonical" href="https://riyan-aditya.github.io//MyBlog/web%20scrap/data%20viz/2020/11/09/EPL-FIFA21.html" />
-<meta property="og:url" content="https://riyan-aditya.github.io//MyBlog/web%20scrap/data%20viz/2020/11/09/EPL-FIFA21.html" />
+<meta name="description" content="Unsupervised learning - prediction of FIFA21 players’ position" />
+<meta property="og:description" content="Unsupervised learning - prediction of FIFA21 players’ position" />
+<link rel="canonical" href="https://riyan-aditya.github.io//MyBlog/web%20scrap/data%20viz/ml/2020/11/09/FIFA21-EPL-pos-pred.html" />
+<meta property="og:url" content="https://riyan-aditya.github.io//MyBlog/web%20scrap/data%20viz/ml/2020/11/09/FIFA21-EPL-pos-pred.html" />
 <meta property="og:site_name" content="MyBlog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-11-09T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"https://riyan-aditya.github.io//MyBlog/web%20scrap/data%20viz/2020/11/09/EPL-FIFA21.html","@type":"BlogPosting","headline":"FIFA21 EPL analysis","dateModified":"2020-11-09T00:00:00-06:00","datePublished":"2020-11-09T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://riyan-aditya.github.io//MyBlog/web%20scrap/data%20viz/2020/11/09/EPL-FIFA21.html"},"description":"Analysis of EPL players in FIFA21","@context":"https://schema.org"}</script>
+{"url":"https://riyan-aditya.github.io//MyBlog/web%20scrap/data%20viz/ml/2020/11/09/FIFA21-EPL-pos-pred.html","@type":"BlogPosting","headline":"FIFA21 EPL analysis","dateModified":"2020-11-09T00:00:00-06:00","datePublished":"2020-11-09T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://riyan-aditya.github.io//MyBlog/web%20scrap/data%20viz/ml/2020/11/09/FIFA21-EPL-pos-pred.html"},"description":"Unsupervised learning - prediction of FIFA21 players’ position","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/MyBlog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://riyan-aditya.github.io//MyBlog/feed.xml" title="MyBlog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -77,13 +77,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">FIFA21 EPL analysis</h1><p class="page-description">Analysis of EPL players in FIFA21</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-11-09T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">FIFA21 EPL analysis</h1><p class="page-description">Unsupervised learning - prediction of FIFA21 players' position</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-11-09T00:00:00-06:00" itemprop="datePublished">
         Nov 9, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      19 min read
+      15 min read
     
 </span></p>
 
@@ -94,6 +94,9 @@ window.onload = wrap_img;
         &nbsp;
       
         <a class="category-tags-link" href="/MyBlog/categories/#Data Viz">Data Viz</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/MyBlog/categories/#ML">ML</a>
         
       
       </p>
@@ -104,19 +107,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/Riyan-Aditya/MyBlog/tree/master/_notebooks/2020-11-09-EPL-FIFA21.ipynb" role="button" target="_blank">
+    <a href="https://github.com/Riyan-Aditya/MyBlog/tree/master/_notebooks/2020-11-09-FIFA21-EPL-pos-pred.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/MyBlog/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/Riyan-Aditya/MyBlog/master?filepath=_notebooks%2F2020-11-09-EPL-FIFA21.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/Riyan-Aditya/MyBlog/master?filepath=_notebooks%2F2020-11-09-FIFA21-EPL-pos-pred.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/MyBlog/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/Riyan-Aditya/MyBlog/blob/master/_notebooks/2020-11-09-EPL-FIFA21.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/Riyan-Aditya/MyBlog/blob/master/_notebooks/2020-11-09-FIFA21-EPL-pos-pred.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/MyBlog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -140,28 +143,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Convert-to-numeric">Convert to numeric </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Top-players-of-Fifa21">Top players of Fifa21 </a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#Top-rated-players-from-each-club">Top rated players from each club </a></li>
-<li class="toc-entry toc-h2"><a href="#Top-rated-players-per-pos">Top rated players per pos </a></li>
-<li class="toc-entry toc-h2"><a href="#Top-rated-players-per-original-country">Top rated players per original country </a></li>
-<li class="toc-entry toc-h2"><a href="#Top-player-based-on-some-stats">Top player based on some stats </a></li>
-<li class="toc-entry toc-h2"><a href="#Top-player-based-on-wages-and-salaries">Top player based on wages and salaries </a></li>
-<li class="toc-entry toc-h2"><a href="#Top-earner-per-club">Top earner per club </a></li>
-<li class="toc-entry toc-h2"><a href="#Total-wage-per-club">Total wage per club </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#Feature-engineering">Feature engineering </a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#Simplify-position">Simplify position </a></li>
-</ul>
-</li>
-</ul><body>
-<!--
+<li class="toc-entry toc-h1"><a href="#Top-players-of-Fifa21">Top players of Fifa21 </a></li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2020-11-09-EPL-FIFA21.ipynb
+# file to edit: _notebooks/2020-11-09-FIFA21-EPL-pos-pred.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -187,7 +174,20 @@ window.onload = wrap_img;
 <li>Create python script (BeautifulSoup) to scrap FIFA21 EPL players data from <a href="https://sofifa.com/">https://sofifa.com/</a> </li>
 <li>Clean data</li>
 <li>Gained information from the data</li>
+<li>Simplify position</li>
+<li>Train test split via stratified sampling</li>
+<li>Predict position =&gt; <strong>90% accuracy and F1 score for the test set via SVM</strong>
+</li>
+<li>Midfielders are the position that are hardest to predict</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Inspired by this analysis from Kaggle: <a href="https://www.kaggle.com/younessennadj/fifa19-analytics-predict-position#4.Divide-the-data-to-train-and-test-datasets">https://www.kaggle.com/younessennadj/fifa19-analytics-predict-position#4.Divide-the-data-to-train-and-test-datasets</a></p>
 
 </div>
 </div>
@@ -220,6 +220,10 @@ window.onload = wrap_img;
 <span class="kn">import</span> <span class="nn">re</span>
 
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </pre></div>
 
     </div>
@@ -270,14 +274,6 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Note: scrap mini list of players (I have done the longer version)</p>
-
-</div>
-</div>
-</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -290,7 +286,7 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
     
     <span class="c1"># make a search and scrap the webpage --------------------------------------------------</span>
     <span class="n">base_url</span> <span class="o">=</span> <span class="s1">'https://sofifa.com/players?type=all&amp;lg%5B%5D=13'</span>
@@ -331,16 +327,6 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Page 0 done
-Page 1 done
-Page 2 done
-Page 3 done
-Page 4 done
-Page 5 done
-Page 6 done
-Page 7 done
-Page 8 done
-Page 9 done
-Page 10 done
 </pre>
 </div>
 </div>
@@ -385,7 +371,7 @@ Page 10 done
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>643</pre>
+<pre>60</pre>
 </div>
 
 </div>
@@ -430,16 +416,16 @@ Page 10 done
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>['/player/192985/kevin-de-bruyne/210010/',
- '/player/212831/alisson-ramses-becker/210010/',
- '/player/209331/mohamed-salah/210010/',
- '/player/208722/sadio-mane/210010/',
- '/player/203376/virgil-van-dijk/210010/',
- '/player/153079/sergio-aguero/210010/',
- '/player/215914/ngolo-kante/210010/',
- '/player/210257/ederson-santana-de-moraes/210010/',
- '/player/202652/raheem-sterling/210010/',
- '/player/200104/heung-min-son/210010/']</pre>
+<pre>['/player/192985/kevin-de-bruyne/210012/',
+ '/player/212831/alisson-ramses-becker/210012/',
+ '/player/209331/mohamed-salah/210012/',
+ '/player/208722/sadio-mane/210012/',
+ '/player/203376/virgil-van-dijk/210012/',
+ '/player/153079/sergio-aguero/210012/',
+ '/player/202126/harry-kane/210012/',
+ '/player/215914/ngolo-kante/210012/',
+ '/player/210257/ederson-santana-de-moraes/210012/',
+ '/player/202652/raheem-sterling/210012/']</pre>
 </div>
 
 </div>
@@ -526,11 +512,11 @@ Page 10 done
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>['/player/192985/kevin-de-bruyne/210010/',
- '/player/212831/alisson-ramses-becker/210010/',
- '/player/209331/mohamed-salah/210010/',
- '/player/208722/sadio-mane/210010/',
- '/player/203376/virgil-van-dijk/210010/']</pre>
+<pre>['/player/192985/kevin-de-bruyne/210012/',
+ '/player/212831/alisson-ramses-becker/210012/',
+ '/player/209331/mohamed-salah/210012/',
+ '/player/208722/sadio-mane/210012/',
+ '/player/203376/virgil-van-dijk/210012/']</pre>
 </div>
 
 </div>
@@ -770,7 +756,7 @@ Page 10 done
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save_data</span><span class="p">(</span><span class="s1">'FIFA21_EPL_top10.json'</span><span class="p">,</span> <span class="n">list_stats_top10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#save_data('FIFA21_EPL_top10.json', list_stats_top10)</span>
 </pre></div>
 
     </div>
@@ -792,17 +778,23 @@ Page 10 done
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">FIFA21_data</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s1">'FIFA21_EPL.json'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">"C:/Users/Riyan Aditya/Desktop/ML_learning/Project6_EPL_20192020"</span><span class="p">)</span>
+<span class="n">FIFA21_data</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s1">'FIFA21_EPL.json'</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+    </details>
 </div>
     
 
@@ -925,285 +917,6 @@ Page 10 done
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Player_name</th>
-      <th>Nationality</th>
-      <th>dob</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>club</th>
-      <th>jersey</th>
-      <th>c_valid</th>
-      <th>c_value</th>
-      <th>wage</th>
-      <th>...</th>
-      <th>Composure</th>
-      <th>Defensive Awareness</th>
-      <th>Standing Tackle</th>
-      <th>Sliding Tackle</th>
-      <th>GK Diving</th>
-      <th>GK Handling</th>
-      <th>GK Kicking</th>
-      <th>GK Positioning</th>
-      <th>GK Reflexes</th>
-      <th>Traits</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>K. De Bruyne</td>
-      <td>Belgium</td>
-      <td>Jun 28, 1991</td>
-      <td>5'11"</td>
-      <td>154lbs</td>
-      <td>Manchester City</td>
-      <td>17</td>
-      <td>2023</td>
-      <td>€129M</td>
-      <td>€370K</td>
-      <td>...</td>
-      <td>91</td>
-      <td>68</td>
-      <td>65</td>
-      <td>53</td>
-      <td>15</td>
-      <td>13</td>
-      <td>5</td>
-      <td>10</td>
-      <td>13</td>
-      <td>[Injury Prone, Leadership, Early Crosser, Long...</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Alisson</td>
-      <td>Brazil</td>
-      <td>Oct 2, 1992</td>
-      <td>6'3"</td>
-      <td>201lbs</td>
-      <td>Liverpool</td>
-      <td>1</td>
-      <td>2024</td>
-      <td>€102M</td>
-      <td>€160K</td>
-      <td>...</td>
-      <td>65</td>
-      <td>15</td>
-      <td>19</td>
-      <td>16</td>
-      <td>86</td>
-      <td>88</td>
-      <td>85</td>
-      <td>91</td>
-      <td>89</td>
-      <td>[GK Long Throw, Rushes Out Of Goal]</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>M. Salah</td>
-      <td>Egypt</td>
-      <td>Jun 15, 1992</td>
-      <td>5'9"</td>
-      <td>157lbs</td>
-      <td>Liverpool</td>
-      <td>11</td>
-      <td>2023</td>
-      <td>€120.5M</td>
-      <td>€250K</td>
-      <td>...</td>
-      <td>90</td>
-      <td>38</td>
-      <td>43</td>
-      <td>41</td>
-      <td>14</td>
-      <td>14</td>
-      <td>9</td>
-      <td>11</td>
-      <td>14</td>
-      <td>[Finesse Shot, Long Shot Taker (AI), Speed Dri...</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>S. Mané</td>
-      <td>Senegal</td>
-      <td>Apr 10, 1992</td>
-      <td>5'9"</td>
-      <td>152lbs</td>
-      <td>Liverpool</td>
-      <td>10</td>
-      <td>2023</td>
-      <td>€120.5M</td>
-      <td>€250K</td>
-      <td>...</td>
-      <td>84</td>
-      <td>42</td>
-      <td>42</td>
-      <td>38</td>
-      <td>10</td>
-      <td>10</td>
-      <td>15</td>
-      <td>7</td>
-      <td>14</td>
-      <td>[Flair, Speed Dribbler (AI)]</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>V. van Dijk</td>
-      <td>Netherlands</td>
-      <td>Jul 8, 1991</td>
-      <td>6'4"</td>
-      <td>203lbs</td>
-      <td>Liverpool</td>
-      <td>4</td>
-      <td>2023</td>
-      <td>€113M</td>
-      <td>€210K</td>
-      <td>...</td>
-      <td>90</td>
-      <td>93</td>
-      <td>93</td>
-      <td>86</td>
-      <td>13</td>
-      <td>10</td>
-      <td>13</td>
-      <td>11</td>
-      <td>11</td>
-      <td>[Solid Player, Leadership, Long Passer (AI), P...</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 47 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 643 entries, 0 to 642
-Data columns (total 47 columns):
-Player_name            643 non-null object
-Nationality            643 non-null object
-dob                    643 non-null object
-height                 643 non-null object
-weight                 643 non-null object
-club                   643 non-null object
-jersey                 643 non-null object
-c_valid                643 non-null object
-c_value                643 non-null object
-wage                   643 non-null object
-pos                    643 non-null object
-rating                 643 non-null object
-Crossing               643 non-null object
-Finishing              643 non-null object
-Heading Accuracy       643 non-null object
-Short Passing          643 non-null object
-Volleys                643 non-null object
-Dribbling              643 non-null object
-Curve                  643 non-null object
-FK Accuracy            643 non-null object
-Long Passing           643 non-null object
-Ball Control           643 non-null object
-Acceleration           643 non-null object
-Spring Speed           643 non-null object
-Agility                643 non-null object
-Reactions              643 non-null object
-Balance                643 non-null object
-Shot Power             643 non-null object
-Jumping                643 non-null object
-Stamina                643 non-null object
-Strength               643 non-null object
-Long Shots             643 non-null object
-Aggression             643 non-null object
-Interceptions          643 non-null object
-Positioning            643 non-null object
-Vision                 643 non-null object
-Penalties              643 non-null object
-Composure              643 non-null object
-Defensive Awareness    643 non-null object
-Standing Tackle        643 non-null object
-Sliding Tackle         643 non-null object
-GK Diving              643 non-null object
-GK Handling            643 non-null object
-GK Kicking             643 non-null object
-GK Positioning         643 non-null object
-GK Reflexes            643 non-null object
-Traits                 446 non-null object
-dtypes: object(47)
-memory usage: 236.2+ KB
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1289,7 +1002,7 @@ memory usage: 236.2+ KB
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>197 from 644 players (~30%) do not have any traits</p>
+<p>199 from 644 players (~30%) do not have any traits</p>
 
 </div>
 </div>
@@ -1563,203 +1276,6 @@ Name: Player_name, dtype: object</pre>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Player_name</th>
-      <th>Nationality</th>
-      <th>dob</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>club</th>
-      <th>jersey</th>
-      <th>c_valid</th>
-      <th>c_value</th>
-      <th>wage</th>
-      <th>...</th>
-      <th>Penalties</th>
-      <th>Composure</th>
-      <th>Defensive Awareness</th>
-      <th>Standing Tackle</th>
-      <th>Sliding Tackle</th>
-      <th>GK Diving</th>
-      <th>GK Handling</th>
-      <th>GK Kicking</th>
-      <th>GK Positioning</th>
-      <th>GK Reflexes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>K. De Bruyne</td>
-      <td>Belgium</td>
-      <td>Jun 28, 1991</td>
-      <td>5'11"</td>
-      <td>154lbs</td>
-      <td>Manchester City</td>
-      <td>17</td>
-      <td>2023</td>
-      <td>€129M</td>
-      <td>€370K</td>
-      <td>...</td>
-      <td>84</td>
-      <td>91</td>
-      <td>68</td>
-      <td>65</td>
-      <td>53</td>
-      <td>15</td>
-      <td>13</td>
-      <td>5</td>
-      <td>10</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Alisson</td>
-      <td>Brazil</td>
-      <td>Oct 2, 1992</td>
-      <td>6'3"</td>
-      <td>201lbs</td>
-      <td>Liverpool</td>
-      <td>1</td>
-      <td>2024</td>
-      <td>€102M</td>
-      <td>€160K</td>
-      <td>...</td>
-      <td>23</td>
-      <td>65</td>
-      <td>15</td>
-      <td>19</td>
-      <td>16</td>
-      <td>86</td>
-      <td>88</td>
-      <td>85</td>
-      <td>91</td>
-      <td>89</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>M. Salah</td>
-      <td>Egypt</td>
-      <td>Jun 15, 1992</td>
-      <td>5'9"</td>
-      <td>157lbs</td>
-      <td>Liverpool</td>
-      <td>11</td>
-      <td>2023</td>
-      <td>€120.5M</td>
-      <td>€250K</td>
-      <td>...</td>
-      <td>83</td>
-      <td>90</td>
-      <td>38</td>
-      <td>43</td>
-      <td>41</td>
-      <td>14</td>
-      <td>14</td>
-      <td>9</td>
-      <td>11</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>S. Mané</td>
-      <td>Senegal</td>
-      <td>Apr 10, 1992</td>
-      <td>5'9"</td>
-      <td>152lbs</td>
-      <td>Liverpool</td>
-      <td>10</td>
-      <td>2023</td>
-      <td>€120.5M</td>
-      <td>€250K</td>
-      <td>...</td>
-      <td>71</td>
-      <td>84</td>
-      <td>42</td>
-      <td>42</td>
-      <td>38</td>
-      <td>10</td>
-      <td>10</td>
-      <td>15</td>
-      <td>7</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>V. van Dijk</td>
-      <td>Netherlands</td>
-      <td>Jul 8, 1991</td>
-      <td>6'4"</td>
-      <td>203lbs</td>
-      <td>Liverpool</td>
-      <td>4</td>
-      <td>2023</td>
-      <td>€113M</td>
-      <td>€210K</td>
-      <td>...</td>
-      <td>62</td>
-      <td>90</td>
-      <td>93</td>
-      <td>93</td>
-      <td>86</td>
-      <td>13</td>
-      <td>10</td>
-      <td>13</td>
-      <td>11</td>
-      <td>11</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 46 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2109,9 +1625,8 @@ Name: Player_name, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-rated-players-from-each-club">
-<a class="anchor" href="#Top-rated-players-from-each-club" aria-hidden="true"><span class="octicon octicon-link"></span></a>Top rated players from each club<a class="anchor-link" href="#Top-rated-players-from-each-club"> </a>
-</h2>
+<p><strong>Top rated players from each club</strong></p>
+
 </div>
 </div>
 </div>
@@ -2422,9 +1937,8 @@ Name: Player_name, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-rated-players-per-pos">
-<a class="anchor" href="#Top-rated-players-per-pos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Top rated players per pos<a class="anchor-link" href="#Top-rated-players-per-pos"> </a>
-</h2>
+<p><strong>Top rated players per pos</strong></p>
+
 </div>
 </div>
 </div>
@@ -2630,9 +2144,8 @@ Name: Player_name, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-rated-players-per-original-country">
-<a class="anchor" href="#Top-rated-players-per-original-country" aria-hidden="true"><span class="octicon octicon-link"></span></a>Top rated players per original country<a class="anchor-link" href="#Top-rated-players-per-original-country"> </a>
-</h2>
+<p><strong>Top rated players per original country</strong></p>
+
 </div>
 </div>
 </div>
@@ -2684,7 +2197,7 @@ Name: Player_name, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>List of top players per country of origin:</p>
+<p>List of top players per nationality of origin:</p>
 
 </div>
 </div>
@@ -2847,9 +2360,8 @@ Name: Player_name, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-player-based-on-some-stats">
-<a class="anchor" href="#Top-player-based-on-some-stats" aria-hidden="true"><span class="octicon octicon-link"></span></a>Top player based on some stats<a class="anchor-link" href="#Top-player-based-on-some-stats"> </a>
-</h2>
+<p><strong>Top player based on some stats</strong></p>
+
 </div>
 </div>
 </div>
@@ -4065,9 +3577,8 @@ Name: 389, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-player-based-on-wages-and-salaries">
-<a class="anchor" href="#Top-player-based-on-wages-and-salaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Top player based on wages and salaries<a class="anchor-link" href="#Top-player-based-on-wages-and-salaries"> </a>
-</h2>
+<p><strong>Top player based on wages and salaries</strong></p>
+
 </div>
 </div>
 </div>
@@ -4123,7 +3634,7 @@ Name: 0, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Highest transfer values</p>
+<p>Highest contract values</p>
 
 </div>
 </div>
@@ -4172,9 +3683,8 @@ Name: 0, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-earner-per-club">
-<a class="anchor" href="#Top-earner-per-club" aria-hidden="true"><span class="octicon octicon-link"></span></a>Top earner per club<a class="anchor-link" href="#Top-earner-per-club"> </a>
-</h2>
+<p><strong>Top earner per club</strong></p>
+
 </div>
 </div>
 </div>
@@ -4431,9 +3941,8 @@ Name: 0, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Total-wage-per-club">
-<a class="anchor" href="#Total-wage-per-club" aria-hidden="true"><span class="octicon octicon-link"></span></a>Total wage per club<a class="anchor-link" href="#Total-wage-per-club"> </a>
-</h2>
+<p><strong>Total wages per club</strong></p>
+
 </div>
 </div>
 </div>
@@ -4607,185 +4116,11 @@ Name: 0, dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Feature-engineering">
-<a class="anchor" href="#Feature-engineering" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature engineering<a class="anchor-link" href="#Feature-engineering"> </a>
-</h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have 16 different positions. We need to simplify this.</p>
-<p>Let's simplify those to the 4 traditional positions: Goalkeeper, Defender, Midfielder, Forward. For simplicity:</p>
-<ul>
-<li>GK: GK</li>
-<li>DF: CB, LB, RB, LWB, RWB</li>
-<li>MF: CDM, CM, CAM, RM, LM,  </li>
-<li>FW: RW, LW, CF, ST</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Simplify-position">
-<a class="anchor" href="#Simplify-position" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simplify position<a class="anchor-link" href="#Simplify-position"> </a>
-</h2>
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<details class="description">
-      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
-        <p></p>
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">repos</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">'GK'</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">'GK'</span>
-    <span class="k">elif</span> <span class="n">pos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'B'</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">'DF'</span>
-    <span class="k">elif</span> <span class="n">pos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'M'</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">'MF'</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">'FW'</span>
-
-<span class="n">df3</span><span class="p">[</span><span class="s1">'pos2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">repos</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">'pos'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-    </details>
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<details class="description">
-      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
-        <p></p>
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pos_count</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[</span><span class="s1">'pos2'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">pos_count</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-    </details>
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>MF    240
-DF    232
-FW    104
-GK     67
-Name: pos2, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<details class="description">
-      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
-        <p></p>
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-
-<span class="n">cat_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'GK'</span><span class="p">,</span><span class="s1">'DF'</span><span class="p">,</span><span class="s1">'MF'</span><span class="p">,</span><span class="s1">'FW'</span><span class="p">]</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">pos_count</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">cat_order</span><span class="p">))</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Count"</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Position"</span><span class="p">)</span>
-<span class="n">HTML</span><span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">include_plotlyjs</span><span class="o">=</span><span class="s1">'cdn'</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-    </details>
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-
-<meta charset="utf-8">
-
-    <div>
-        
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
-            <div id="b371ab8c-b523-4985-87a9-f83d69f3a6d2" class="plotly-graph-div" style="height:100%; width:100%;"></div>
-            <script type="text/javascript">
-                
-                    window.PLOTLYENV=window.PLOTLYENV || {};
-                    
-                if (document.getElementById("b371ab8c-b523-4985-87a9-f83d69f3a6d2")) {
-                    Plotly.newPlot(
-                        'b371ab8c-b523-4985-87a9-f83d69f3a6d2',
-                        [{"alignmentgroup": "True", "hovertemplate": "variable=pos2<br>index=%{x}<br>value=%{y}<extra></extra>", "legendgroup": "pos2", "marker": {"color": "#636efa"}, "name": "pos2", "offsetgroup": "pos2", "orientation": "v", "showlegend": true, "textposition": "auto", "type": "bar", "x": ["GK", "DF", "MF", "FW"], "xaxis": "x", "y": [67, 232, 240, 104], "yaxis": "y"}],
-                        {"barmode": "relative", "legend": {"title": {"text": "variable"}, "tracegroupgap": 0}, "margin": {"t": 60}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "Position"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "Count"}}},
-                        {"responsive": true}
-                    )
-                };
-                
-            </script>
-        </div>
-
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 </div>
 
 
-</body>
-  </div><a class="u-url" href="/MyBlog/web%20scrap/data%20viz/2020/11/09/EPL-FIFA21.html" hidden></a>
+
+  </div><a class="u-url" href="/MyBlog/web%20scrap/data%20viz/ml/2020/11/09/FIFA21-EPL-pos-pred.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
