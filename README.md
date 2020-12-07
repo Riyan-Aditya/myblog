@@ -40,7 +40,7 @@ Models used in this learnings are logistic, k-nearest neighbour, random forest a
 
 Sample visualisation:
 
-*Position vs wage in Fifa21. Note: Kevin de Bruyne is the outlier*
+*Position vs wage in FIFA21. Note: Kevin de Bruyne is the outlier*
 <img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fifa21_pos_classification/fifa21_pos_clas.PNG">
 
 *Covariance matrix for the test result*
