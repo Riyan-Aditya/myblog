@@ -24,8 +24,8 @@ I am using the data from [KawalCovid](https://kawalcovid19.id/) and others to gi
 
 Sample visualisation (from December 2020):
 
-<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/covid19_sample_images/daily_cases_per_prov.png">
-<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/covid19_sample_images/daily_cases_and_tests.png">
+<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/covid19_sample_images/daily_cases_per_prov.PNG">
+<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/covid19_sample_images/daily_cases_and_tests.PNG">
 
 
 ## Machine Learning
