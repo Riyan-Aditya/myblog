@@ -38,6 +38,8 @@ I used the data for allthe  players who play in EPL from the FIFA21 game . This 
 
 Models used in this learnings are logistic, k-nearest neighbour, random forest and support vector machine. Overall, the best model after tuning is the *SVM* where it has roughly *90% accuracy* and F1 score to predict the position of the players in the test set. Unsurprisingly, midfielders are the position that are hardest to predict (wingers probably have similar attribute to wide forwards and defensive midfielders might have similar skillset to defenders).
 
+The full blog posts [here](https://riyan-aditya.github.io/MyBlog/web%20scrap/data%20viz/ml/2020/11/09/FIFA21-EPL-pos-pred.html#Accuracy-and-F1-score)
+
 Sample visualisation:
 
 *Position vs wage in FIFA21. Note: Kevin de Bruyne is the outlier*
