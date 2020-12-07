@@ -25,14 +25,28 @@ I am using the data from [KawalCovid](https://kawalcovid19.id/) and others to gi
 Sample visualisation (from December 2020):
 
 <img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/covid19_sample_images/daily_cases_per_prov.PNG">
+
+*Daily cases and daily tests in Indonesia*
 <img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/covid19_sample_images/daily_cases_and_tests.PNG">
 
 
 ## Machine Learning
 
-**FIFA21 EPL player position classification**
+**FIFA21 EPL player position classification (unsupervised)**
 
-(placeholder)
+I used the data for allthe  players who play in EPL from the FIFA21 game . This is my first attempt to conduct an unsupervised learning by using data from players' attributes to predict players' position. 
+
+Models used in this learnings are logistic, k-nearest neighbour, random forest and support vector machine. Overall, the best model after tuning is the *SVM* where it has roughly *90% accuracy* and F1 score to predict the position of the players in the test set. Unsurprisingly, midfielders are the position that are hardest to predict (wingers probably have similar attribute to wide forwards and defensive midfielders might have similar skillset to defenders).
+
+Sample visualisation:
+
+*Position vs wage in Fifa21. Note: Kevin de Bruyne is the outlier*
+<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fifa21_pos_classification/fifa21_pos_clas.PNG">
+
+*Covariance matrix for the test result*
+<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fifa21_pos_classification/conf_matrix_test.PNG">
+
+
 
 
 
