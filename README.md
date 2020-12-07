@@ -16,9 +16,11 @@ This page highlights those projects that I am most proud of.
 
 **Covid19 in Indonesia**
 
-I am using the data from KawalCovid and others to give me a quick overview of the latest worldwide and Indonesian data. The blog posts [here](https://riyan-aditya.github.io/MyBlog/data%20viz/2020/10/12/CovidID.html) contain interactive data vizualisation that I update weekly. 
+I am using the data from [KawalCovid](https://kawalcovid19.id/) and others to give me a quick overview of the latest worldwide and Indonesian data. The blog posts [here](https://riyan-aditya.github.io/MyBlog/data%20viz/2020/10/12/CovidID.html) contain interactive data vizualisation that I update weekly. 
 
 Sample visualisation:
+
+<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/diagram.png"/>
 
 
 
