@@ -9,6 +9,12 @@ This summary page showcase projects that I am most proud off. All the projects a
 # Projects
 
 I have made a series of projects, all of which are available on my blog : https://riyan-aditya.github.io/MyBlog/categories/
+This page highlights those project that I am most proud of. 
+
+## Data visualisation
+
+**Covid19 in Indonesia**
+
 
 
 
