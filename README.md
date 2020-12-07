@@ -13,8 +13,8 @@ I have made a series of projects, all of which are available on my blog : https:
 This page highlights those projects that I am most proud of. 
 
 ## Table of Content :
-- [Data visualisation](https://github.com/maelfabien/Machine_Learning_Tutorials#data-visualisation)
-- [Machine learning](https://github.com/maelfabien/Machine_Learning_Tutorials#machine-learning)
+- [Data visualisation](https://github.com/Riyan-Aditya/MyBlog#data-visualisation)
+- [Machine learning](https://github.com/Riyan-Aditya/MyBlog#machine-learning)
 
 ## Data visualisation
 
@@ -24,8 +24,8 @@ I am using the data from [KawalCovid](https://kawalcovid19.id/) and others to gi
 
 Sample visualisation (from December 2020):
 
-<img src="https://github.com/Riyan-Aditya/MyBlog/tree/master/images/covid19_sample_images/daily_cases_per_prov.png"/>
-<img src="https://github.com/Riyan-Aditya/MyBlog/tree/master/images/covid19_sample_images/daily_cases_and_tests.png"/>
+<img src="https://github.com/Riyan-Aditya/MyBlog/tree/master/images/covid19_sample_images/daily_cases_per_prov.png">
+<img src="https://github.com/Riyan-Aditya/MyBlog/tree/master/images/covid19_sample_images/daily_cases_and_tests.png">
 
 
 ## Machine Learning
