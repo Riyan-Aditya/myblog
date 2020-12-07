@@ -32,7 +32,7 @@ Sample visualisation (from December 2020):
 
 ## Machine Learning
 
-**FIFA21 EPL player position classification (unsupervised)**
+**FIFA21 EPL player position classification (unsupervised learning)**
 
 I used the data for allthe  players who play in EPL from the FIFA21 game . This is my first attempt to conduct an unsupervised learning by using data from players' attributes to predict players' position. 
 
