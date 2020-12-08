@@ -34,7 +34,7 @@ Sample visualisation (from December 2020):
 
 **FIFA21 EPL player position classification (unsupervised learning)**
 
-I used the data for allthe  players who play in EPL from the FIFA21 game . This is my first attempt to conduct an unsupervised learning by using data from players' attributes to predict players' position. 
+I webscrapped the data for all the  players who play in EPL from the FIFA21 game from this [website](https://sofifa.com/players?type=all&lg%5B0%5D=13). This is my first attempt to conduct an unsupervised learning by using data from players' attributes to predict players' position. 
 
 Models used in this learnings are logistic, k-nearest neighbour, random forest and support vector machine. Overall, the best model after tuning is the *SVM* where it has roughly *90% accuracy* and F1 score to predict the position of the players in the test set. Unsurprisingly, midfielders are the position that are hardest to predict (wingers probably have similar attribute to wide forwards and defensive midfielders might have similar skillset to defenders).
 
