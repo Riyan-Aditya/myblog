@@ -6,6 +6,8 @@ The blog documents my effort to be a better Data Scientiest and Data Analyst. Al
 
 This summary page showcase projects that I am most proud off. All the projects are organised based on topic on https://riyan-aditya.github.io/MyBlog/categories/.
 
+The blog was made with the help of [fastpages](https://github.com/fastai/fastpages)
+
 # Projects
 
 I have made a series of projects, all of which are available on my blog : https://riyan-aditya.github.io/MyBlog/categories/
