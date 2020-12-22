@@ -59,11 +59,11 @@ The full blog posts [here](https://riyan-aditya.github.io/MyBlog/data%20viz/ml/2
 Sample visualisation:
 
 
-*Position vs wage in FIFA21. Note: Kevin de Bruyne is the outlier*
-<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fifa21_pos_classification/fifa21_pos_clas.PNG">
+*Melbourne house prices map*
+<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/melb_house_reg/melb_house_prices_map.PNG">
 
-*Covariance matrix for the test result*
-<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fifa21_pos_classification/conf_matrix_test.PNG">
+*Median price and distance to CBD*
+<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/melb_house_reg/median_price_vs_dist.PNG">
 
 
 
