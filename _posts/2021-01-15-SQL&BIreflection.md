@@ -1,3 +1,9 @@
+---
+title: "Learning SQL, Tableau and Power BI"
+description: My reflection on learning SQL, Tableau and Power BI, as well as using them for our family's restaurant business.
+date: "2021-01-15"
+---
+
 I have been trying to learn SQL and BI. I used to think that those are unnecessary since I can do everything via Python (querrying, pivoting, group by and visualisation). But within 2 days of learning them, I can see why they are useful.  
 
 # SQL
