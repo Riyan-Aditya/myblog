@@ -30,7 +30,7 @@ Hence, this lead to an uneven number of rows to pivot. To solve this I had to us
 
 For now, I have created a web app locally in Voila to help simplify the process. Every month I need to run the program to help our HR. An overview of the app can be seen here:
 
-<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/app_demp.PNG">
+<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/app_demo.PNG">
 
 
 # To do
