@@ -10,12 +10,11 @@ date: "2021-01-25"
 The HR in my family's restaurant business has been struggling to calculate salaries for the workers each month. One of the pain point is to translate the data from the fingerprint machine into the required format for salary calculation. Note that we are paying hourly wages, hence we use a fingerprint machine to record the time when the workers come in and out, as well as the time when they take a break.  
 
 The data from the fingerprint looks like this. Every employee is identified based on their worker id, name, timestamp and status. Status indicates when they come for work and take break. 
-
-<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/fingerprint_input.PNG">
+![](https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/fingerprint_input.PNG)
 
 For salary calculation, the HR requires the data in different format. Where each row represents each day. there should be four fingerprint data per day (start work, start break, end break, end work). I created a python app, to reorganise the format above into like this. 
 
-<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/fingerprint_output.PNG">
+![](https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/fingerprint_output.PNG)
 
 This little program has **saved our HR about 1-2 days of admin time per month**, where they used to have to pivot the data manually. Now I can help them solve this in less than 5 minutes 
 
@@ -32,7 +31,7 @@ Hence, this lead to an uneven number of rows to pivot. To solve this I had to us
 
 For now, I have created a web app locally in Voila to help simplify the process. Every month I need to run the program to help our HR. An overview of the app can be seen here:
 
-<img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/app_demo.PNG">
+![](https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/app_demo.PNG)
 
 
 # To do
