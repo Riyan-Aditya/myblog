@@ -11,11 +11,11 @@ The HR in my family's restaurant business has been struggling to calculate salar
 
 The data from the fingerprint looks like this. Every employee is identified based on their worker id, name, timestamp and status. Status indicates when they come for work and take break. 
 
-![](/images/fingerprint_absent/fingerprint_input.png)
+![](/images/fingerprint_absent/fingerprint_input.PNG)
 
 For salary calculation, the HR requires the data in different format. Where each row represents each day. there should be four fingerprint data per day (start work, start break, end break, end work). I created a python app, to reorganise the format above into like this. 
 
-![](/images/fingerprint_absent/fingerprint_output.png)
+![](/images/fingerprint_absent/fingerprint_output.PNG)
 
 This little program has **saved our HR about 1-2 days of admin time per month**, where they used to have to pivot the data manually. Now I can help them solve this in less than 5 minutes 
 
@@ -32,7 +32,7 @@ Hence, this lead to an uneven number of rows to pivot. To solve this I had to us
 
 For now, I have created a web app locally in Voila to help simplify the process. Every month I need to run the program to help our HR. An overview of the app can be seen here:
 
-![](/images/fingerprint_absent/app_demo.png)
+![](/images/fingerprint_absent/app_demo.PNG)
 
 
 # To do
