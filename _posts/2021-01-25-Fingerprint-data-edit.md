@@ -10,6 +10,7 @@ date: "2021-01-25"
 The HR in my family's restaurant business has been struggling to calculate salaries for the workers each month. One of the pain point is to translate the data from the fingerprint machine into the required format for salary calculation. Note that we are paying hourly wages, hence we use a fingerprint machine to record the time when the workers come in and out, as well as the time when they take a break.  
 
 The data from the fingerprint looks like this. Every employee is identified based on their worker id, name, timestamp and status. Status indicates when they come for work and take break. 
+
 ![](https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/fingerprint_input.PNG)
 
 For salary calculation, the HR requires the data in different format. Where each row represents each day. there should be four fingerprint data per day (start work, start break, end break, end work). I created a python app, to reorganise the format above into like this. 
