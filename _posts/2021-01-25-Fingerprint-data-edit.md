@@ -17,6 +17,8 @@ For salary calculation, the HR requires the data in different format. Where each
 
 <img src="https://github.com/Riyan-Aditya/MyBlog/blob/master/images/fingerprint_absent/fingerprint_output.PNG">
 
+This little program has **saved our HR about 1-2 days of admin time per month**, where they used to have to pivot the data manually. Now I can help them solve this in less than 5 minutes 
+
 
 # Solution
 
